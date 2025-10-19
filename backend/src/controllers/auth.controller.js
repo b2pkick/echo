@@ -15,7 +15,7 @@ export const signup = async(req,res)=>{
                 message:"password must be atleast 6 characters"
             })
         }
-    
+
         const user = await User.findOne({email})
 
         if(user) return res.status(400).json({
@@ -73,7 +73,7 @@ export const login = async(req,res)=>{
         })
     }catch(error){
         console.log("Error in login controller", error.message)
-        res.status(500).json({message:"Internal Server Error"})
+        rddes.status(500).json({message:"Internal Server Error"})
     }
 }
 
