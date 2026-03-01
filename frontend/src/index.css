@@ -1,1 +1,33 @@
 @import "tailwindcss";
+@plugin "daisyui";
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.pixelated{
+    background: url('./assets/images/pixelated.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login{
+    background: url('./assets/images/download.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+*{
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    scrollbar-width: 0;
+}
+html{
+    scrollbar-width: none;
+}
