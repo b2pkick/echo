@@ -133,7 +133,7 @@ export const useAuthStore = create((set,get)=>({
     connectSocket:()=>{
         const {authUser}=get()
         if(!authUser||get().socket?.connected) return
-        const socket =io("echo-production-cc43.up.railway.app",{
+        const socket =io("https://echo-production-cc43.up.railway.app",{
             query:{
                 userId:authUser._id
             }
