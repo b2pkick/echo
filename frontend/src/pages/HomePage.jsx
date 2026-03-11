@@ -9,7 +9,7 @@ const openContext=createContext()
 
 function HomePage() {
   const {selectedUser}=useChatStore()
-  const [open,setOpen] =useState(true)
+  const [open,setOpen] =useState(false)
   return (
     <openContext.Provider value={{open,setOpen}}>
     <div className='w-full h-[100%] relative overflow-hidden mt-18'>
