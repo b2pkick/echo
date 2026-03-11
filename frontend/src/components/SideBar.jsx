@@ -7,7 +7,7 @@ import avatar from "./../assets/images/image.webp"
 const SideBar = () => {
     const {open,setOpen} = useContext(openContext)
     
-    const {getUsers,users,selectedUser,setSelectedUser,isUserLoading} =useChatStore();
+    const {getUsers,users,selectedUser,setSelectedUser,isUsersLoading} =useChatStore();
 
     const onlineUser=[]
 
@@ -16,7 +16,7 @@ const SideBar = () => {
         console.log(users)
     },[getUsers])
 
-    if(isUserLoading) return(
+    if(isUsersLoading) return(
       <div className='flex justify-center items-center h-screen text-7xl'>
       <div className='animate-bounce'>. </div>
       <div className='animate-bounce delay1'>. </div>
