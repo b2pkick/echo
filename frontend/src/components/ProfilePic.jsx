@@ -9,7 +9,7 @@ const ProfilePic = () => {
 
   return (
     <Link to={"/profile"}>
-    <img src={authUser.profilePic} className='h-[50px] w-[50px] rounded-full'></img>
+    <img src={authUser.profilePic||avatar} className='h-[50px] w-[50px] rounded-full'></img>
     </Link>
   )
 }

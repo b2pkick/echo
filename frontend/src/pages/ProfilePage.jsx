@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 
 const ProfilePage = () => {
 
-  const {isUpdatingProfile,update,authUser} = useAuthStore()
+  const {isUpdatingProfile,update,authUser,logout} = useAuthStore()
 
   const [file,setfile] = useState(null)
   const [preview,setpreview] = useState(null)
@@ -43,13 +43,17 @@ const ProfilePage = () => {
       await update({profilePic:pic})
     }
   }
+  
+  const out =async()=>{
+    await logout()
+  }
 
   const image1=preview||authUser.profilePic||image
 
   return (
-    <div className='login h-screen flex justify-center items-center'>
+    <div className='login h-screen w-screen flex justify-center items-center'>
       <div className='w-[300px] h-[400px] sm:w-[300px] sm:h-[475px] md:w-[670px] md:h-[670px] bg-white opacity-60 border-8 border-white rounded-2xl'>
-        <div className='flex justify-center items-center h-[30%] bg-black rounded-t-xl'>
+        <div className='flex justify-center items-center h-[30%] bg-black rounded-t-xl pt-5'>
           <div className='rounded-full h-[70px] w-[70px] sm:h-[100px] sm:w-[100px] md:h-[175px] md:w-[175px] bg-blue-950 relative'>
             <label htmlFor='image' className='absolute bottom-0 right-0'>
               <Camera className='h-[25px] w-[25px] md:h-[50px] md:w-[50px] p-1 md:p-3 text-white bg-black rounded-full'/>
@@ -78,6 +82,7 @@ const ProfilePage = () => {
           </button>
         </div>
       </div>
+      <button onClick={()=>out()} className='absolute bottom-5 left-10 bg-white text-black rounded-2xl p-1 md:p-3 text-[20px] md:text-2xl opacity-60'>logout</button>
     </div>
   )
 }
