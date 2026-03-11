@@ -26,7 +26,7 @@ const SideBar = () => {
     // console.log(selectedUser)
 
   return (
-    <div className = {`${open?"translate-x-0":"translate-x-[-100%]"} overflow-y-auto h-full w-75 md:w-100 flex flex-col absolute transition-all duration-500 left-0 bg-black text-white items-center text-4xl border-2 border-l-0 z-1000`}>
+    <div className = {`${open?"translate-x-0":"-translate-x-full"} overflow-y-auto h-full w-75 md:w-100 flex flex-col absolute transition-all duration-500 left-0 bg-black text-white items-center text-4xl border-2 border-l-0 z-1000`}>
         <div className=''>
             contacts
         </div>
