@@ -13,7 +13,10 @@ const SideBar = () => {
     const onlineUser=[]
 
     useEffect(()=>{
-      setMounted(true)
+      const timer=setTimeout(() => {
+        setMounted(true)
+      }, 50);
+      return ()=>clearTimeout(timer)
     },[])
 
     useEffect(()=>{
