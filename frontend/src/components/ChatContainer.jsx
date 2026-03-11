@@ -46,8 +46,8 @@ const ChatContainer = () => {
       <ChatHeader />
       <div className='flex-1 overflow-y-auto w-full'>
         
-        {messages.length > 0 && messages.map((curr)=>(
-          <div key={curr._id} ref={messageEndRef} className={`w-full flex h-10 bg-yellow-400 ${curr.senderId===selectedUser._id?"justify-start":"justify-end"}`}>
+        {messages.length > 0 && messages.map((curr)=>{
+          return (<div key={curr._id} ref={messageEndRef} className={`w-full flex h-10 bg-yellow-400 ${curr.senderId===selectedUser._id?"justify-start":"justify-end"}`}>
             {curr.senderId===selectedUser._id?<div className='flex items-center'>
               <img className='h-10 w-10' src={selectedUser.profilePic||avatar}/>
               {curr.text&&<p>{curr.text}</p>}
@@ -58,7 +58,7 @@ const ChatContainer = () => {
               <img className='h-10 w-10' src={authUser.profilePic||avatar}/>
             </div>}
           </div>
-        ))}
+        )})}
       </div>
       <MessageInput />
     </div>
