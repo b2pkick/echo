@@ -17,7 +17,7 @@ const port = process.env.PORT||5001
 // app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin:["http://localhost:5173","https://your-vercel-app.vercel.app"],
+    origin:["http://localhost:5173","https://echo-eight-xi.vercel.app/"],
     credentials:true
 }))
 app.use(express.json({limit:"10mb"}))
