@@ -9,7 +9,7 @@ const SideBar = () => {
     
     const {getUsers,users,selectedUser,setSelectedUser,isUsersLoading} =useChatStore();
 
-    const onlineUser=[]
+    // const onlineUser=[]
 
     useEffect(()=>{
         getUsers()
