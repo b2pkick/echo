@@ -30,7 +30,7 @@ const SideBar = () => {
         <div className=''>
             contacts
         </div>
-        <div className='w-full h-full overflow-y-auto flex flex-col items-center'>
+        <div className='w-full flex-1 h-full overflow-y-auto flex flex-col items-center'>
           {users.map((user)=>(
             <button key={user._id} onClick={()=>{setSelectedUser(user)}} className={`flex justify-center items-center gap-2 ${selectedUser?._id===user._id?"text-yellow-300":"text-blue-200"}`}>
               <img src={user.profilePic||avatar} className='w-6 h-6 rounded-full'></img>
