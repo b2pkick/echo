@@ -16,13 +16,13 @@ const SideBar = () => {
         console.log(users)
     },[getUsers])
 
-    if(isUsersLoading) return(
-      <div className='flex justify-center items-center h-screen text-7xl'>
-      <div className='animate-bounce'>. </div>
-      <div className='animate-bounce delay1'>. </div>
-      <div className='animate-bounce delay2'>. </div>
-    </div>
-    )
+    // if(isUsersLoading) return(
+    //   <div className='flex justify-center items-center h-screen text-7xl'>
+    //   <div className='animate-bounce'>. </div>
+    //   <div className='animate-bounce delay1'>. </div>
+    //   <div className='animate-bounce delay2'>. </div>
+    // </div>
+    // )
     // console.log(selectedUser)
 
   return (
@@ -31,12 +31,18 @@ const SideBar = () => {
             contacts
         </div>
         <div className='w-full flex-1 h-full overflow-y-auto flex flex-col items-center'>
-          {users.map((user)=>(
+          {isUsersLoading ? (
+            <div className='flex justify-center items-center h-screen text-7xl'>
+            <div className='animate-bounce'>. </div>
+            <div className='animate-bounce delay1'>. </div>
+            <div className='animate-bounce delay2'>. </div>
+          </div>) : (users.map((user)=>(
             <button key={user._id} onClick={()=>{setSelectedUser(user)}} className={`flex justify-center items-center gap-2 ${selectedUser?._id===user._id?"text-yellow-300":"text-blue-200"}`}>
               <img src={user.profilePic||avatar} className='w-6 h-6 rounded-full'></img>
               {user.fullName}
             </button>
-          ))}
+          )))}
+          
         </div>
     </div>
   )
