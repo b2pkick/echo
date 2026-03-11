@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { useEffect } from 'react'
 import { useChatStore } from '../store/useChatStore'
 import { openContext } from '../pages/HomePage'
@@ -6,18 +6,10 @@ import avatar from "./../assets/images/image.webp"
 
 const SideBar = () => {
     const {open,setOpen} = useContext(openContext)
-    const [mounted,setMounted]=useState(false)
     
     const {getUsers,users,selectedUser,setSelectedUser,isUsersLoading} =useChatStore();
 
     const onlineUser=[]
-
-    useEffect(()=>{
-      const timer=setTimeout(() => {
-        setMounted(true)
-      }, 50);
-      return ()=>clearTimeout(timer)
-    },[])
 
     useEffect(()=>{
         getUsers()
@@ -34,7 +26,7 @@ const SideBar = () => {
     // console.log(selectedUser)
 
   return (
-    <div className = {`${open?"translate-x-0":"translate-x-[-100%]"} overflow-y-auto h-full w-75 md:w-100 flex flex-col absolute ${mounted?"transition-all duration-500":""} left-0 bg-black text-white items-center text-4xl border-2 border-l-0 z-1000`}>
+    <div className = {`${open?"translate-x-0":"translate-x-[-100%]"} overflow-y-auto h-full w-75 md:w-100 flex flex-col absolute transition-all duration-500 left-0 bg-black text-white items-center text-4xl border-2 border-l-0 z-1000`}>
         <div className=''>
             contacts
         </div>
