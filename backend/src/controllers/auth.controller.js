@@ -81,7 +81,10 @@ export const login = async(req,res)=>{
 export const logout = async(req,res)=>{
     try{
         res.cookie("jwt","",{
-            maxAge:0
+            maxAge:0,
+            httpOnly:true,
+            sameSite:"none",
+            secure:process.env.NODE_ENV !== "development"
         })
         res.status(200).json({message:"Logged Out Succesfully"})
     }catch(error){
@@ -115,7 +118,7 @@ export const checkAuth = (req,res) =>{
     try{
         res.status(200).json(req.user)
     }catch(error){
-        console.log("error in checkauth controller".error.message)
+        console.log("error in checkauth controller",error.message)
         res.status(500).json({message:"internal server error"})
     }
 }

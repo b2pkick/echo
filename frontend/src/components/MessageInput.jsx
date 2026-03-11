@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { useChatStore } from '../store/useChatStore'
 import avatar from "./../assets/images/image.webp"
 import {Image,Send} from "lucide-react"
+import toast from 'react-hot-toast'
 
 const MessageInput = () => {
     const [text,setText] = useState("")
@@ -14,7 +15,7 @@ const MessageInput = () => {
         if(!file) return        
         console.log(file)
         if(!file.type.startsWith("image/")){
-            toast.error(error.response.data.message||"provide image file",{
+            toast.error("provide image file",{
             icon:'💬',
             style:{
                 backgroundColor:'rgba(0, 0, 0, 0.3)',
