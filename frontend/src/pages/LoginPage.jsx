@@ -70,7 +70,7 @@ const LoginPage = () => {
     }
     return (
       <>
-        <div className='flex flex-col justify-around items-center w-full text-black pixelated h-screen overflow-hidden'>
+        <div className='flex flex-col justify-around items-center w-full text-black pixelated h-screen overflow-hidden no-scrollbar'>
           <div className='flex flex-col justify-center items-center text-shadow-black w-full'>
           <h2 className='text-7xl md:text-9xl text-white'>Echo</h2>
           <h2 className='text-3xl md:text-5xl text-white'>get connected to us</h2>

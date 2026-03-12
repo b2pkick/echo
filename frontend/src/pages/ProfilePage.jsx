@@ -51,7 +51,7 @@ const ProfilePage = () => {
   const image1=preview||authUser.profilePic||image
 
   return (
-    <div className='login h-screen w-screen flex justify-center items-center'>
+    <div className='login h-screen w-screen flex justify-center items-center no-scrollbar'>
       <div className='w-[300px] h-[400px] sm:w-[300px] sm:h-[475px] md:w-[670px] md:h-[670px] bg-white opacity-60 border-8 border-white rounded-2xl'>
         <div className='flex justify-center items-center h-[30%] bg-black rounded-t-xl pt-5'>
           <div className='rounded-full h-[70px] w-[70px] sm:h-[100px] sm:w-[100px] md:h-[175px] md:w-[175px] bg-blue-950 relative'>

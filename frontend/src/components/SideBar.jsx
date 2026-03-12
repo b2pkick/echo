@@ -30,9 +30,9 @@ const SideBar = () => {
         <div className='text-6xl'>
             contacts
         </div>
-        <div className='w-full flex-1 h-full overflow-y-auto flex flex-col items-center p-4'>
+        <div className='w-full flex-1 h-full overflow-y-auto flex flex-col items-center p-4 no-scrollbar'>
           {isUsersLoading ? (
-            <div className='flex justify-center items-center h-screen text-7xl'>
+            <div className='flex justify-center items-center h-screen text-7xl no-scrollbar'>
             <div className='animate-bounce'>. </div>
             <div className='animate-bounce delay1'>. </div>
             <div className='animate-bounce delay2'>. </div>
