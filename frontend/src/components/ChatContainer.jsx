@@ -49,7 +49,7 @@ const ChatContainer = () => {
           <div key={curr._id} ref={messageEndRef} className={`w-full flex ${curr.senderId===selectedUser._id?"justify-start":"justify-end"} mt-5`}>
             {curr.senderId===selectedUser._id?<div className='flex justify-center gap-2 max-w-[70%]'>
               <img className='h-10 w-10 rounded-full object-cover flex-shrink-0' src={selectedUser.profilePic||avatar}/>
-              <div className='flex flex-col justify-center items-start min-w-0 flex-1'>
+              <div className='flex flex-col justify-center items-start min-w-0 flex-1 gap-2'>
               {curr.image&&<img src={curr.image} className='w-40 h-40 object-cover border-2 border-amber-50'/>}
               {curr.text&&<p className='break-words whitespace-pre-wrap max-w-40 md:max-w-130 bg-amber-50 opacity-50 text-black p-1 text-2xl'>{curr.text}</p>}
               </div>
