@@ -63,10 +63,10 @@ const MessageInput = () => {
         )}
         <form onSubmit={handleSendMessage}>
             <div className='flex-1 flex gap-2 w-full'>
-                <input type='text' placeholder='type a message ...' className=' p-2 bg-amber-50 opacity-50 text-black w-full outline-none' value={text} onChange={(e)=>{setText(e.target.value)}}></input>
+                <input type='text' placeholder='type a message ...' className=' p-2 bg-white opacity-50 text-black w-full outline-none' value={text} onChange={(e)=>{setText(e.target.value)}}></input>
                 <input type='file' accept='image/*' className='hidden' ref={fileInputRef} onChange={handleImageChange}></input>
-                <button type='button' className='flex justify-center items-center h-10 w-10 bg-amber-50 opacity-50 text-black' onClick={()=>(fileInputRef.current?.click())} disabled={isSendingMessage}><Image /></button>
-                <button type='submit' className='h-10 w-10 flex justify-center items-center bg-amber-50 opacity-50 text-black' disabled={(!text.trim()&&!imagePreview)||isSendingMessage}><Send /></button>
+                <button type='button' className='flex justify-center items-center h-10 w-10 bg-white opacity-50 text-black' onClick={()=>(fileInputRef.current?.click())} disabled={isSendingMessage}><Image /></button>
+                <button type='submit' className='h-10 w-10 flex justify-center items-center bg-white opacity-50 text-black' disabled={(!text.trim()&&!imagePreview)||isSendingMessage}><Send /></button>
             </div>
         </form>
     </div>

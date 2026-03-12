@@ -95,7 +95,7 @@ const SignUpPage = () => {
               username
             </label>
           </div>
-          <div className='flex w-full bg-amber-50 opacity-50 justify-center items-center border-white gap-3 p-1'>
+          <div className='flex w-full bg-white opacity-50 justify-center items-center border-white gap-3 p-1'>
             <User />
             <input className='w-full outline-none text-2xl' type='text' value={formData.fullName} spellCheck="false" onChange={(e)=>{
               setFormData(prev=>({...prev,fullName:e.target.value}))
@@ -106,7 +106,7 @@ const SignUpPage = () => {
               email
             </label>
           </div>
-          <div className='flex w-full bg-amber-50 opacity-50 justify-center items-center border-white border- gap-3 p-1'>
+          <div className='flex w-full bg-white opacity-50 justify-center items-center border-white border- gap-3 p-1'>
             <Mail />
             <input className='w-full outline-none text-2xl' type='email' value={formData.email} spellCheck="false" onChange={(e)=>{
               setFormData(prev=>({...prev,email:e.target.value}))
@@ -117,7 +117,7 @@ const SignUpPage = () => {
               password
             </label>
           </div>
-          <div className='flex w-full bg-amber-50 opacity-50 justify-center items-center border-white border- gap-3 p-1'>
+          <div className='flex w-full bg-white opacity-50 justify-center items-center border-white border- gap-3 p-1'>
             <Key />
             <input className='w-full outline-none text-2xl' type={showPassword?"text":"password"} value={formData.password} spellCheck="false" onChange={(e)=>{
               setFormData(prev=>({...prev,password:e.target.value}))
@@ -127,7 +127,7 @@ const SignUpPage = () => {
             </button>
           </div>
       <div className='w-full flex  justify-center items-center h-20'>
-        <button onClick={handleSubmit} disabled={isSigningUp} type='submit' className='px-3 md:px-8 py-1 md:py-2 bg-amber-50 opacity-50 text-2xl md:text-4xl' >{isSigningUp?<>Loading...</>:<>SignUp</>}</button>
+        <button onClick={handleSubmit} disabled={isSigningUp} type='submit' className='px-3 md:px-8 py-1 md:py-2 bg-white opacity-50 text-2xl md:text-4xl' >{isSigningUp?<>Loading...</>:<>SignUp</>}</button>
       </div>
         </form>
       </div>

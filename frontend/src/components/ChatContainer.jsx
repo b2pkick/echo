@@ -50,13 +50,13 @@ const ChatContainer = () => {
             {curr.senderId===selectedUser._id?<div className='flex justify-center gap-2 max-w-[70%]'>
               <img className='h-10 w-10 rounded-full object-cover flex-shrink-0' src={selectedUser.profilePic||avatar}/>
               <div className='flex flex-col justify-center items-start min-w-0 flex-1 gap-2'>
-              {curr.image&&<img src={curr.image} className='w-40 h-40 object-cover border-2 border-amber-50'/>}
-              {curr.text&&<p className='break-words whitespace-pre-wrap max-w-40 md:max-w-130 bg-amber-50 opacity-50 text-black p-1 text-2xl'>{curr.text}</p>}
+              {curr.image&&<img src={curr.image} className='w-40 h-40 object-cover border-2 border-white'/>}
+              {curr.text&&<p className='break-words whitespace-pre-wrap max-w-40 md:max-w-130 bg-white opacity-50 text-black p-1 text-2xl'>{curr.text}</p>}
               </div>
             </div>:<div className='flex justify-center gap-2 max-w-[70%]'>
               <div className='flex flex-col justify-center items-end min-w-0 flex-1 gap-2'>
-              {curr.image&&<img src={curr.image}  className='w-40 h-40 object-cover border-2 border-amber-50'/>}
-              {curr.text&&<p className='break-words whitespace-pre-wrap max-w-40 md:max-w-130 bg-amber-50 opacity-50 text-black p-1 text-2xl'>{curr.text}</p>}
+              {curr.image&&<img src={curr.image}  className='w-40 h-40 object-cover border-2 border-white'/>}
+              {curr.text&&<p className='break-words whitespace-pre-wrap max-w-40 md:max-w-130 bg-white opacity-50 text-black p-1 text-2xl'>{curr.text}</p>}
               </div>
               <img className='h-10 w-10 rounded-full object-cover flex-shrink-0' src={authUser.profilePic||avatar}/>
             </div>}

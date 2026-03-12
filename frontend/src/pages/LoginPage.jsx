@@ -82,7 +82,7 @@ const LoginPage = () => {
                 email
               </label>
             </div>
-            <div className='flex w-full bg-amber-50 opacity-50 justify-center items-center border-white gap-3 p-1'>
+            <div className='flex w-full bg-white opacity-50 justify-center items-center border-white gap-3 p-1'>
               <Mail />
               <input className='w-full outline-none text-2xl' type='email' value={formData.email} spellCheck="false" onChange={(e)=>{
                 setFormData(prev=>({...prev,email:e.target.value}))
@@ -93,7 +93,7 @@ const LoginPage = () => {
                 password
               </label>
             </div>
-            <div className='flex w-full bg-amber-50 opacity-50 justify-center items-center border-white border- gap-3 p-1'>
+            <div className='flex w-full bg-white opacity-50 justify-center items-center border-white border- gap-3 p-1'>
               <Key />
               <input className='w-full outline-none text-2xl' type={showPassword?"text":"password"} value={formData.password} spellCheck="false" onChange={(e)=>{
                 setFormData(prev=>({...prev,password:e.target.value}))
@@ -103,7 +103,7 @@ const LoginPage = () => {
               </button>
             </div>
         <div className='w-full flex  justify-center items-center h-20'>
-          <button onClick={handleSubmit} disabled={isLoggingIn} type='submit' className='px-3 md:px-8 py-1 md:py-2 bg-amber-50 opacity-50 text-2xl md:text-4xl' >{isLoggingIn?<>Loading...</>:<>Login</>}</button>
+          <button onClick={handleSubmit} disabled={isLoggingIn} type='submit' className='px-3 md:px-8 py-1 md:py-2 bg-white opacity-50 text-2xl md:text-4xl' >{isLoggingIn?<>Loading...</>:<>Login</>}</button>
         </div>
           </form>
         </div>
