@@ -9,6 +9,12 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+.pixelated-1{
+    background: url('./assets/images/home4.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .login{
     background: url('./assets/images/download.gif');
@@ -31,8 +37,17 @@
 body{
     margin: 0;
     padding: 0;
-    scrollbar-width: 0;
+    scrollbar-width: none;
 }
 html{
     scrollbar-width: none;
+}
+
+.no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
 }

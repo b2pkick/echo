@@ -31,7 +31,7 @@ const ChatContainer = () => {
   },[messages])
 
   if(isMessagesLoading) return(
-    <div className='flex h-full w-full bg-black items-center text-white flex-col justify-between'>
+    <div className='flex h-full w-full items-center text-white flex-col justify-between px-15 pt-18'>
       <ChatHeader />
       <div className='flex justify-center items-center h-full text-7xl'>
         <div className='animate-bounce'>. </div>
@@ -42,19 +42,23 @@ const ChatContainer = () => {
     </div>
   )
   return (
-    <div className='flex h-full w-full bg-black items-center text-white flex-col justify-between'>
+    <div className='flex h-full w-full bg-transparent items-center text-white flex-col justify-between px-7 md:px-15 no-scrollbar pt-18'>
       <ChatHeader />
-      <div className='flex-1 overflow-y-auto w-full'>
+      <div className='flex-1 overflow-y-auto overflow-x-hidden w-full no-scrollbar'>
         {messages.map((curr)=>(
-          <div key={curr._id} ref={messageEndRef} className={`w-full flex h-10 bg-yellow-400 ${curr.senderId===selectedUser._id?"justify-start":"justify-end"}`}>
-            {curr.senderId===selectedUser._id?<div className='flex items-center'>
-              <img className='h-10 w-10' src={selectedUser.profilePic||avatar}/>
-              {curr.text&&<p>{curr.text}</p>}
-              {curr.image&&<img src={curr.image} className='w-10 h-10'/>}
-            </div>:<div className='flex h-10 items-center'>
-              {curr.text&&<p>{curr.text}</p>}
-              {curr.image&&<img src={curr.image}  className='w-10 h-10'/>}
-              <img className='h-10 w-10' src={authUser.profilePic||avatar}/>
+          <div key={curr._id} ref={messageEndRef} className={`w-full flex ${curr.senderId===selectedUser._id?"justify-start":"justify-end"} mt-5`}>
+            {curr.senderId===selectedUser._id?<div className='flex justify-center gap-2 max-w-[70%]'>
+              <img className='h-10 w-10 rounded-full object-cover flex-shrink-0' src={selectedUser.profilePic||avatar}/>
+              <div className='flex flex-col justify-center items-end min-w-0 flex-1'>
+              {curr.image&&<img src={curr.image} className='w-40 h-40 object-cover border-2 border-amber-50'/>}
+              {curr.text&&<p className='break-words whitespace-pre-wrap max-w-40 md:max-w-130 bg-amber-50 opacity-50 text-black p-1 text-2xl'>{curr.text}</p>}
+              </div>
+            </div>:<div className='flex justify-center gap-2 max-w-[70%]'>
+              <div className='flex flex-col justify-center items-end min-w-0 flex-1 gap-2'>
+              {curr.image&&<img src={curr.image}  className='w-40 h-40 object-cover border-2 border-amber-50'/>}
+              {curr.text&&<p className='break-words whitespace-pre-wrap max-w-40 md:max-w-130 bg-amber-50 opacity-50 text-black p-1 text-2xl'>{curr.text}</p>}
+              </div>
+              <img className='h-10 w-10 rounded-full object-cover flex-shrink-0' src={authUser.profilePic||avatar}/>
             </div>}
           </div>
         ))}

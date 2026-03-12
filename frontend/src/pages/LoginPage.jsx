@@ -82,7 +82,7 @@ const LoginPage = () => {
                 email
               </label>
             </div>
-            <div className='flex w-full bg-amber-50 opacity-50 justify-center items-center border-white border- gap-3 p-1'>
+            <div className='flex w-full bg-amber-50 opacity-50 justify-center items-center border-white gap-3 p-1'>
               <Mail />
               <input className='w-full outline-none text-2xl' type='email' value={formData.email} spellCheck="false" onChange={(e)=>{
                 setFormData(prev=>({...prev,email:e.target.value}))

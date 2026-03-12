@@ -52,21 +52,21 @@ const MessageInput = () => {
         }   
     }
   return (
-    <div className='w-full p-4 '>
+    <div className='w-full py-4'>
         {imagePreview&&(
-            <div className='mb-10 w-30 h-30 bg-black'>
+            <div className='mb-10 w-30 h-30'>
                 <div className='relative'>
-                <img src={imagePreview} className='w-30 h-30 object-cover border-2' />
-                <button className='absolute right-2 top-0 text-black text-3xl' onClick={removeImage}>X</button>
+                <img src={imagePreview} className='w-30 h-30 object-cover border-2 border-amber-50' />
+                <button className='absolute right-2 top-0 text-3xl text-amber-50' onClick={removeImage}>X</button>
                 </div>
             </div>
         )}
         <form onSubmit={handleSendMessage}>
             <div className='flex-1 flex gap-2 w-full'>
-                <input type='text' placeholder='type a message ...' className='border-2 bg-gray-700 w-full' value={text} onChange={(e)=>{setText(e.target.value)}}></input>
+                <input type='text' placeholder='type a message ...' className=' p-2 bg-amber-50 opacity-50 text-black w-full outline-none' value={text} onChange={(e)=>{setText(e.target.value)}}></input>
                 <input type='file' accept='image/*' className='hidden' ref={fileInputRef} onChange={handleImageChange}></input>
-                <button type='button' className='bg-orange-400 h-10 w-10' onClick={()=>(fileInputRef.current?.click())} disabled={isSendingMessage}><Image /></button>
-                <button type='submit' className='h-10 w-10 bg-amber-300' disabled={(!text.trim()&&!imagePreview)||isSendingMessage}><Send /></button>
+                <button type='button' className='flex justify-center items-center h-10 w-10 bg-amber-50 opacity-50 text-black' onClick={()=>(fileInputRef.current?.click())} disabled={isSendingMessage}><Image /></button>
+                <button type='submit' className='h-10 w-10 flex justify-center items-center bg-amber-50 opacity-50 text-black' disabled={(!text.trim()&&!imagePreview)||isSendingMessage}><Send /></button>
             </div>
         </form>
     </div>
